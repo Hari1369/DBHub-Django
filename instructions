@@ -1,3 +1,13 @@
 step 1) python manage.py migrate --database=default
 step 2) python manage.py migrate --database=mysql_db
 step 3) python manage.py migrate --database=sqlite_db
+
+# =============> MIGRATION SETUP <=============
+python manage.py makemigrations
+python manage.py migrate --database=mysql_db
+
+# ============> DATABASE USER CREATION MYSQL <============
+step 1) sudo mysql
+step 2) CREATE USER IF NOT EXISTS 'quantumd'@'localhost' IDENTIFIED BY 'admlqq';
+step 3) GRANT ALL PRIVILEGES ON test1.* TO 'quantumd'@'localhost';
+step 4) FLUSH PRIVILEGES;
